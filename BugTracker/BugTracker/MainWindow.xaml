@@ -1,0 +1,38 @@
+﻿<Window x:Class="BugTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BugTracker"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+            <ColumnDefinition Width="25*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" Visibility="Visible">
+            <Button Content="HOME" Click="Goto_LoginPage"></Button>
+            <Button Content="USER PAGE" Click="Goto_UserPage"></Button>
+            <Button Content="Page 3" Click="Goto_Test1"></Button>
+            <Button Content="Page Test" Click="Goto_Testing"></Button>
+            <Button Content="Page 5" Click="Goto_UserPage1" ></Button>
+            <Button Content="PROFILE" Click="Goto_UserPage1"></Button>
+        </StackPanel>
+        <DockPanel Grid.Column="4" Grid.ColumnSpan="1" Visibility="Visible">
+            <Label Name="WelcomeBanner" Content="Welcome user" VerticalAlignment="Center"></Label>
+            <Button Content="LOG OUT" Click="Goto_LoginPage" ></Button>
+        </DockPanel>
+        <Frame x:Name="MainCanvas" NavigationUIVisibility="Hidden" Grid.Row="1" Grid.RowSpan="2" Grid.ColumnSpan="4"></Frame>
+        <DataGrid Name="myDataGrid2" Grid.Row="3" Grid.ColumnSpan="3" Visibility="Collapsed"></DataGrid>
+    </Grid>
+</Window>
